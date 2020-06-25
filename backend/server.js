@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 
 
@@ -45,6 +46,9 @@ app.use(
     })
   })
 )
+
+// cors
+app.use(cors({origin: true, credentials: true}));
 
 const index = require('./routes/index')
 app.use(bodyParser.json());
