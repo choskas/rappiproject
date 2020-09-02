@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import 'antd/dist/antd.css';
 import * as serviceWorker from './serviceWorker';
 import Router from './Router';
-
+import {Auth0Provider} from '@auth0/auth0-react'
+const domain = process.env.REACT_APP_AUTH0_DOMAIN;
+const client = process.env.REACT_APP_AUTH0_CLIENT_ID;
 ReactDOM.render(
   <React.StrictMode>
     <Router />
